@@ -29,7 +29,7 @@ export default function Navigation() {
     <>
       <nav className={`fixed top-0 inset-x-0 z-50 transition-all duration-500 ${scrolled ? "py-2" : "py-4"}`}>
         <div className="absolute inset-0 bg-brand-dark/85 backdrop-blur-xl border-b border-brand-gold/10" />
-        <div className="container mx-auto px-6 relative flex items-center justify-between">
+        <div className="container mx-auto px-4 sm:px-6 relative flex items-center justify-between">
           <Link to="/" className="flex items-center gap-3 group">
             <div className="relative w-11 h-11 blob-1 overflow-hidden bg-brand-gold animate-blob">
               <img src={logo} alt="Triple E" className="w-full h-full object-cover" />

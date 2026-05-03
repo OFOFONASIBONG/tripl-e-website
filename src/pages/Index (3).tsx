@@ -15,23 +15,16 @@ const Index = () => {
       <section className="relative min-h-[100svh] flex items-center bg-aurora text-brand-cream overflow-hidden pt-32 pb-20">
         {/* Multi-layered backdrop */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 right-0 w-[700px] h-[700px] bg-brand-gold/10 blob-2 blur-[120px]" />
-          <div className="absolute bottom-0 -left-32 w-[600px] h-[600px] bg-brand-leafdeep/40 blob-3 blur-[100px] animate-blob" />
+          <div className="absolute -top-20 right-0 w-[300px] h-[300px] sm:w-[500px] sm:h-[500px] lg:w-[700px] lg:h-[700px] bg-brand-gold/10 blob-2 blur-[60px] sm:blur-[100px] lg:blur-[120px]" />
+          <div className="absolute bottom-0 -left-16 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-brand-leafdeep/40 blob-3 blur-[50px] sm:blur-[80px] lg:blur-[100px] animate-blob" />
           <div className="absolute inset-0 bg-noise opacity-[0.18] mix-blend-overlay" />
         </div>
 
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-7">
-              <Reveal>
-                <div className="inline-flex items-center gap-3 px-4 py-2 rounded-full border border-brand-cream/10 bg-brand-cream/5 backdrop-blur-sm mb-8">
-                  <span className="w-2 h-2 rounded-full bg-brand-gold animate-pulse" />
-                  <span className="font-sans text-[11px] tracking-[0.3em] uppercase text-brand-goldlight">An Incubator for Human Potential</span>
-                </div>
-              </Reveal>
-
               <Reveal delay={0.1}>
-                <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.25rem] leading-[1.02] mb-8">
+                <h1 className="font-serif text-5xl md:text-7xl lg:text-[5.25rem] leading-[1.02] mb-8 mt-8">
                   Move beyond <br />
                   <span className="relative italic text-gradient-gold">
                     Emotional Stuckness.
@@ -43,11 +36,8 @@ const Index = () => {
               </Reveal>
 
               <Reveal delay={0.2}>
-                <p className="font-sans text-brand-cream/70 text-lg md:text-xl max-w-xl mb-4 font-light leading-relaxed">
+                <p className="font-sans text-brand-cream/70 text-lg md:text-xl max-w-xl mb-10 font-light leading-relaxed">
                   Triple E Counselling Services is more than a consultancy — it is an <strong className="text-brand-cream font-medium">incubator for human potential</strong>. We believe every individual is a <em className="text-brand-goldlight">"Gift to Humanity."</em>
-                </p>
-                <p className="font-sans text-brand-cream/60 text-base max-w-xl mb-10 font-light leading-relaxed">
-                  Founded on Character & Competence, our mission is to move people from <em>"Accidental Career Choices"</em> into a state of Maximum Output through professional guidance, academic rigor, and divine alignment.
                 </p>
               </Reveal>
 
@@ -60,10 +50,6 @@ const Index = () => {
                   <Link to="/contact" className="btn-pea btn-pea-ghost">
                     Begin Consultation
                   </Link>
-                  <div className="flex items-center gap-3 text-brand-cream/60 text-sm font-sans tracking-wide">
-                    <ShieldCheck size={28} className="text-brand-gold" weight="duotone" />
-                    <span>7 Years Incorporated<br/>6 Years Unbroken Operations</span>
-                  </div>
                 </div>
               </Reveal>
             </div>
@@ -76,7 +62,7 @@ const Index = () => {
                 <div className="relative w-full h-full blob-1 overflow-hidden duotone-gold shadow-2xl shadow-brand-gold/20 bg-brand-navy group">
                   <img src={logo} alt="Triple E Logo"
                     className="w-full h-full object-cover img-blend"
-                    width={1080} height={1920} />
+                    width={1080} height={1920} loading="lazy" />
                 </div>
                 <div className="absolute -bottom-6 -left-6 w-32 h-32 blob-4 bg-brand-gold/90 backdrop-blur-sm flex flex-col items-center justify-center text-brand-dark animate-float">
                   <span className="font-serif text-3xl font-bold leading-none">7+</span>
@@ -95,7 +81,7 @@ const Index = () => {
       {/* ===================== ETHOS STRIP ===================== */}
       <section className="bg-brand-cream py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-soft opacity-50 pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <Stagger className="grid md:grid-cols-3 gap-8">
             {[
               { num: "I.", t: "Manifesto", d: "An incubator built on Character & Competence — every person, a Gift to Humanity." },
@@ -116,14 +102,11 @@ const Index = () => {
 
       {/* ===================== EBENEZER CODE ===================== */}
       <section className="bg-brand-cream py-32 relative overflow-hidden">
-        <div className="absolute -top-32 right-0 w-[500px] h-[500px] bg-brand-sage/20 blob-2 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="absolute -top-16 right-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[500px] lg:h-[500px] bg-brand-sage/20 blob-2 blur-2xl sm:blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <Reveal>
-              <p className="font-sans text-brand-gold tracking-[0.3em] uppercase text-xs font-bold mb-4">IV. Operating Philosophy</p>
-            </Reveal>
             <Reveal delay={0.1}>
-              <h2 className="font-serif text-4xl md:text-6xl text-brand-dark mb-6">"The Ebenezer Code"</h2>
+              <h2 className="font-serif text-4xl md:text-6xl text-brand-dark mb-6 mt-4">"The Ebenezer Code"</h2>
             </Reveal>
             <Reveal delay={0.2}>
               <p className="font-sans text-brand-dark/70 text-lg font-light italic">
@@ -187,11 +170,10 @@ const Index = () => {
       {/* ===================== ECOSYSTEM PREVIEW ===================== */}
       <section className="bg-brand-navy py-32 text-brand-cream relative overflow-hidden">
         <div className="absolute top-0 right-0 text-[15vw] font-serif font-bold text-outline-cream opacity-[0.04] whitespace-nowrap pointer-events-none -translate-y-1/4 leading-none">ECOSYSTEM</div>
-        <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-brand-leafdeep/40 blob-2 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-brand-leafdeep/40 blob-2 blur-2xl sm:blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-20">
-            <Reveal><p className="font-sans text-brand-gold tracking-[0.3em] uppercase text-xs font-bold mb-4">III. The Service Ecosystem</p></Reveal>
-            <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-6xl mb-6">Incubating Potential.</h2></Reveal>
+            <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-6xl mb-6 mt-4">Incubating Potential.</h2></Reveal>
             <Reveal delay={0.2}><p className="font-sans text-brand-cream/60 text-lg font-light">Three psychologically-rooted pillars designed for profound personal and professional transformation.</p></Reveal>
           </div>
 
@@ -222,8 +204,8 @@ const Index = () => {
 
       {/* ===================== FOUNDER STRIP ===================== */}
       <section className="py-32 bg-cream-pattern relative overflow-hidden">
-        <div className="absolute -top-20 -right-20 w-[500px] h-[500px] bg-brand-goldlight/30 blob-2 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="absolute -top-10 -right-10 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[500px] lg:h-[500px] bg-brand-goldlight/30 blob-2 blur-2xl sm:blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5 relative">
               <Reveal>
@@ -236,14 +218,8 @@ const Index = () => {
             </div>
 
             <div className="lg:col-span-7">
-              <Reveal>
-                <div className="flex items-center gap-4 mb-6">
-                  <span className="w-12 h-px bg-brand-gold block" />
-                  <h3 className="font-sans text-brand-gold tracking-[0.3em] uppercase text-xs font-bold">II. The Founder</h3>
-                </div>
-              </Reveal>
               <Reveal delay={0.1}>
-                <h2 className="font-serif text-4xl md:text-6xl text-brand-dark mb-3">Mr. Edohoeket<br/>Emmanuel <span className="italic text-gradient-gold">Eshiet</span></h2>
+                <h2 className="font-serif text-4xl md:text-6xl text-brand-dark mb-3 mt-6">Mr. Edohoeket<br/>Emmanuel <span className="italic text-gradient-gold">Eshiet</span></h2>
                 <span className="text-brand-dark/60 text-lg font-sans font-light italic">{"{ Ph.D. in-view }"} • The Herald of Uyo</span>
               </Reveal>
               <Reveal delay={0.2}>
@@ -280,11 +256,10 @@ const Index = () => {
       {/* ===================== MEDIA STRIP ===================== */}
       <section className="bg-brand-dark py-32 text-brand-cream relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-soft opacity-30 pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="grid lg:grid-cols-12 gap-12 items-end mb-16">
             <div className="lg:col-span-7">
-              <Reveal><p className="font-sans text-brand-gold tracking-[0.3em] uppercase text-xs font-bold mb-4">A Voice on Air</p></Reveal>
-              <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-6xl">Answering the call of <span className="italic text-gradient-gold">humanity.</span></h2></Reveal>
+              <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-6xl mt-4">Answering the call of <span className="italic text-gradient-gold">humanity.</span></h2></Reveal>
             </div>
             <div className="lg:col-span-5">
               <Reveal delay={0.2}>
@@ -322,7 +297,7 @@ const Index = () => {
 
       {/* ===================== 2026 MANDATE TEASER ===================== */}
       <section className="py-32 bg-cream-pattern relative overflow-hidden">
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="max-w-5xl mx-auto bg-brand-dark text-brand-cream p-12 md:p-20 relative overflow-hidden" style={{ borderRadius: "60px 14px 60px 14px" }}>
             <div className="absolute -top-20 -right-20 w-[400px] h-[400px] bg-brand-gold/15 blob-2 blur-3xl pointer-events-none" />
             <div className="absolute -bottom-20 -left-20 w-[400px] h-[400px] bg-brand-leafdeep/40 blob-3 blur-3xl pointer-events-none" />
@@ -351,9 +326,9 @@ const Index = () => {
       {/* ===================== BLOG POSTS TEASERS ===================== */}
       <section className="bg-brand-navy py-24 text-brand-cream relative overflow-hidden">
         <div className="absolute top-0 right-0 text-[12vw] font-serif font-bold text-outline-cream opacity-[0.03] whitespace-nowrap pointer-events-none -translate-y-1/4 leading-none">INSIGHTS</div>
-        <div className="absolute -bottom-32 -left-32 w-[500px] h-[500px] bg-brand-gold/8 blob-3 blur-[80px] pointer-events-none" />
+        <div className="absolute -bottom-16 -left-16 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[500px] lg:h-[500px] bg-brand-gold/8 blob-3 blur-[40px] sm:blur-[60px] lg:blur-[80px] pointer-events-none" />
         
-        <div className="container mx-auto px-6 relative z-10">
+        <div className="container mx-auto px-4 sm:px-6 relative z-10">
           <div className="text-center max-w-3xl mx-auto mb-16">
             <Reveal>
               <p className="font-sans text-brand-gold tracking-[0.3em] uppercase text-xs font-bold mb-4">VI. Latest Insights</p>
@@ -386,6 +361,7 @@ const Index = () => {
                         src={post.heroImage} 
                         alt={post.title}
                         className="w-full h-full object-cover transition-transform duration-1000 group-hover:scale-110"
+                        loading="lazy"
                       />
                       <div className="absolute inset-0 bg-gradient-to-t from-brand-navy-2 via-transparent to-transparent" />
                       
@@ -405,7 +381,7 @@ const Index = () => {
                             borderRadius: imgIndex === 0 ? '14px 5px 14px 5px' : '8px 16px 8px 16px'
                           }}
                         >
-                          <img src={img} alt="" className="w-full h-full object-cover" />
+                          <img src={img} alt="" className="w-full h-full object-cover" loading="lazy" />
                         </div>
                       ))}
                       
@@ -465,7 +441,7 @@ const Index = () => {
 
       {/* ===================== CLOSING QUOTE ===================== */}
       <section className="bg-brand-cream py-32 relative overflow-hidden">
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <Reveal>
             <div className="max-w-4xl mx-auto text-center">
               <Quotes size={56} className="text-brand-gold mx-auto mb-8" weight="fill" />
@@ -474,7 +450,7 @@ const Index = () => {
               </p>
               <div className="flex items-center justify-center gap-4">
                 <div className="w-14 h-14 blob-1 overflow-hidden bg-brand-dark">
-                  <img src={logo} alt="Triple E" className="w-full h-full object-cover" />
+                  <img src={logo} alt="Triple E" className="w-full h-full object-cover" loading="lazy" />
                 </div>
                 <div className="text-left">
                   <p className="font-serif text-brand-dark text-lg">Mr. E. E. Eshiet</p>

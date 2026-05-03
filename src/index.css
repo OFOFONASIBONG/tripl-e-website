@@ -1,8 +1,46 @@
-@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap');
-
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/* Mobile viewport height fix */
+@supports (height: 100svh) {
+  .min-h-screen { min-height: 100svh; }
+}
+
+/* Prevent horizontal scrolling and enforce responsive shrinking */
+html, body, #root {
+  overflow-x: hidden;
+  overflow-y: auto;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+  min-width: 0;
+  width: 100%;
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  padding-left: env(safe-area-inset-left, 0);
+  padding-right: env(safe-area-inset-right, 0);
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+html::-webkit-scrollbar,
+body::-webkit-scrollbar,
+#root::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  box-sizing: border-box;
+  min-width: 0;
+  scrollbar-width: none;
+  -ms-overflow-style: none;
+}
+
+*::-webkit-scrollbar {
+  display: none;
+}
+
 
 /* Triple E. — Design System
    Brand: Character + Competence. Dark navy + gold + cream.
@@ -13,6 +51,78 @@
 
 @layer base {
   :root {
+    --background: 41 50% 97%;            /* cream #FDFBF7 */
+    --foreground: 213 40% 7%;            /* deep dark */
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 40% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 40% 7%;
+
+    --primary: 211 67% 17%;              /* brand-navy #0F2A47 */
+    --primary-foreground: 41 50% 97%;
+
+    --secondary: 113 65% 53%;            /* brand-leaf #4FD23B */
+    --secondary-foreground: 211 67% 12%;
+
+    --muted: 211 25% 92%;
+    --muted-foreground: 211 20% 35%;
+
+    --accent: 113 65% 53%;               /* leaf green */
+    --accent-foreground: 211 67% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 213 20% 88%;
+    --input: 213 20% 88%;
+    --ring: 113 65% 53%;
+
+    --radius: 1.5rem;
+
+    /* Brand tokens — derived from the logo */
+    --brand-dark: 211 70% 9%;            /* deeper navy */
+    --brand-navy: 211 67% 17%;           /* logo navy #0F2A47 */
+    --brand-navy-2: 211 55% 28%;
+    --brand-gold: 46 65% 52%;            /* retained gold accent */
+    --brand-goldlight: 46 70% 83%;
+    --brand-cream: 41 50% 97%;
+    --brand-sand: 36 38% 87%;
+    --brand-sage: 113 35% 70%;
+    --brand-leaf: 113 65% 53%;           /* logo green #4FD23B */
+    --brand-leaf-light: 113 70% 78%;
+    --brand-leaf-deep: 145 55% 22%;      /* deep evergreen */
+    --brand-mist: 188 35% 78%;
+    --brand-gray: 211 15% 55%;
+
+    /* Gradients — navy + leaf forward */
+    --grad-aurora: radial-gradient(120% 80% at 0% 0%, hsl(var(--brand-leaf) / 0.35), transparent 60%),
+                   radial-gradient(80% 80% at 100% 0%, hsl(var(--brand-leaf-deep) / 0.55), transparent 55%),
+                   radial-gradient(100% 100% at 50% 100%, hsl(var(--brand-navy) / 0.98), hsl(var(--brand-dark)) 70%);
+    --grad-gold: linear-gradient(135deg, hsl(var(--brand-gold)) 0%, hsl(var(--brand-goldlight)) 100%);
+    --grad-leaf: linear-gradient(135deg, hsl(var(--brand-leaf-deep)) 0%, hsl(var(--brand-leaf)) 100%);
+    --grad-leaf-bright: linear-gradient(135deg, hsl(var(--brand-leaf)) 0%, hsl(var(--brand-leaf-light)) 100%);
+    --grad-navy: linear-gradient(135deg, hsl(var(--brand-navy)) 0%, hsl(var(--brand-dark)) 100%);
+    --grad-cream: radial-gradient(60% 50% at 30% 20%, hsl(var(--brand-sand)) 0%, hsl(var(--brand-cream)) 70%);
+
+    /* Shadows */
+    --shadow-soft: 0 30px 60px -30px hsl(var(--brand-navy) / 0.35);
+    --shadow-gold: 0 30px 80px -20px hsl(var(--brand-gold) / 0.45);
+    --shadow-leaf: 0 30px 80px -20px hsl(var(--brand-leaf) / 0.55);
+    --shadow-navy: 0 30px 80px -20px hsl(var(--brand-navy) / 0.55);
+  }
+
+  /* Respect user's motion preferences */
+  @media (prefers-reduced-motion: reduce) {
+    *, *::before, *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+    }
+  }
+
+  .dark {
     --background: 41 50% 97%;            /* cream #FDFBF7 */
     --foreground: 213 40% 7%;            /* deep dark */
 
@@ -116,10 +226,10 @@
     font-feature-settings: 'ss01', 'cv11';
   }
   ::selection { background: hsl(var(--brand-leaf)); color: hsl(var(--brand-navy)); }
-  ::-webkit-scrollbar { width: 10px; }
-  ::-webkit-scrollbar-track { background: hsl(var(--brand-dark)); }
-  ::-webkit-scrollbar-thumb { background: hsl(var(--brand-leaf-deep)); border-radius: 5px; }
-  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--brand-leaf)); }
+  ::-webkit-scrollbar { display: none; }
+  ::-webkit-scrollbar-track { background: transparent; }
+  ::-webkit-scrollbar-thumb { background: transparent; }
+  ::-webkit-scrollbar-thumb:hover { background: transparent; }
 
   /* Custom cursor — leaf-green dot + outline */
   @media (pointer: fine) {
@@ -162,6 +272,7 @@
     @apply relative inline-flex items-center gap-3 px-9 py-4 font-sans font-semibold tracking-wide
            transition-all duration-500 overflow-hidden;
     border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+    min-height: 44px; /* Ensure touch targets are at least 44px for mobile */
   }
   .btn-pea-gold {
     background: var(--grad-gold);

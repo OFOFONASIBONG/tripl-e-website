@@ -65,7 +65,6 @@ const Services = () => {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="III. The Service Ecosystem"
         title={<>Incubating <span className="italic text-gradient-gold">potential.</span></>}
         subtitle="Three psychologically-rooted pillars — research, reinvention and restoration — designed to move people from accidental choices into Maximum Output."
         watermark="ECOSYSTEM"
@@ -74,7 +73,7 @@ const Services = () => {
       {/* OVERVIEW */}
       <section className="bg-brand-cream py-20 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-soft opacity-40 pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <Stagger className="grid md:grid-cols-3 gap-6">
             {services.map((s, i) => (
               <StaggerItem key={s.id}>
@@ -104,15 +103,15 @@ const Services = () => {
         >
           {idx % 2 === 0 && (
             <>
-              <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-brand-gold/10 blob-2 blur-3xl pointer-events-none" />
-              <div className="absolute -bottom-40 -left-40 w-[600px] h-[600px] bg-brand-leafdeep/40 blob-3 blur-3xl pointer-events-none" />
+              <div className="absolute -top-20 -right-20 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-brand-gold/10 blob-2 blur-2xl sm:blur-3xl pointer-events-none" />
+              <div className="absolute -bottom-20 -left-20 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-brand-leafdeep/40 blob-3 blur-2xl sm:blur-3xl pointer-events-none" />
             </>
           )}
           {idx % 2 !== 0 && (
-            <div className="absolute -top-32 -right-32 w-[500px] h-[500px] bg-brand-goldlight/30 blob-2 blur-3xl pointer-events-none" />
+            <div className="absolute -top-16 -right-16 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[500px] lg:h-[500px] bg-brand-goldlight/30 blob-2 blur-2xl sm:blur-3xl pointer-events-none" />
           )}
 
-          <div className="container mx-auto px-6 relative z-10">
+          <div className="container mx-auto px-4 sm:px-6 relative z-10">
             <div className={`grid lg:grid-cols-12 gap-16 items-center ${idx % 2 === 0 ? "" : "lg:[&>*:first-child]:order-2"}`}>
               <div className="lg:col-span-5">
                 <Parallax offset={50}>
@@ -164,7 +163,7 @@ const Services = () => {
       {/* PROCESS BAND */}
       <section className="bg-brand-cream py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-soft opacity-40 pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-2xl mx-auto mb-16">
             <Reveal><p className="font-sans text-brand-gold tracking-[0.3em] uppercase text-xs font-bold mb-4">The Engagement Arc</p></Reveal>
             <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl text-brand-dark">From first conversation to <span className="italic">measurable change.</span></h2></Reveal>
@@ -191,8 +190,8 @@ const Services = () => {
 
       {/* TESTIMONIAL CARD */}
       <section className="bg-brand-navy py-32 text-brand-cream relative overflow-hidden">
-        <div className="absolute -top-40 right-0 w-[500px] h-[500px] bg-brand-gold/10 blob-2 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="absolute -top-20 right-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[500px] lg:h-[500px] bg-brand-gold/10 blob-2 blur-2xl sm:blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <Reveal>
             <div className="max-w-4xl mx-auto text-center">
               <Quotes size={56} className="text-brand-gold mx-auto mb-8" weight="fill" />

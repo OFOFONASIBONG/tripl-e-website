@@ -20,7 +20,6 @@ const About = () => {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="II. The Founder"
         title={<>The <span className="italic text-gradient-gold">Herald</span> of Uyo</>}
         subtitle="Mr. Edohoeket Emmanuel Eshiet { Ph.D. in-view } — Counselling & Career Psychologist, Psychology Lecturer, Media Consultant, and CEO of an incubator for human potential."
         watermark="ESHIET"
@@ -29,7 +28,7 @@ const About = () => {
       {/* PORTRAIT + IDENTITY */}
       <section className="bg-cream-pattern py-32 relative overflow-hidden">
         <div className="absolute -top-32 -right-20 w-[600px] h-[600px] bg-brand-goldlight/30 blob-2 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="grid lg:grid-cols-12 gap-16 items-center">
             <div className="lg:col-span-5">
               <Parallax offset={40}>
@@ -68,7 +67,7 @@ const About = () => {
       {/* PILLARS */}
       <section className="bg-brand-dark py-32 text-brand-cream relative overflow-hidden">
         <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-brand-leafdeep/30 blob-3 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <Reveal><p className="font-sans text-brand-gold tracking-[0.3em] uppercase text-xs font-bold mb-4">Four Hats, One Calling</p></Reveal>
             <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl">A leader for the <span className="italic text-gradient-gold">whole person.</span></h2></Reveal>
@@ -98,7 +97,7 @@ const About = () => {
       {/* JOURNEY TIMELINE */}
       <section className="bg-brand-cream py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-soft opacity-40 pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <Reveal><p className="font-sans text-brand-gold tracking-[0.3em] uppercase text-xs font-bold mb-4">A Journey of Conviction</p></Reveal>
             <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl text-brand-dark">Milestones that shaped <span className="italic">the Herald.</span></h2></Reveal>
@@ -128,7 +127,7 @@ const About = () => {
       {/* QUOTE */}
       <section className="bg-brand-navy py-32 text-brand-cream relative overflow-hidden">
         <div className="absolute -top-40 right-0 w-[500px] h-[500px] bg-brand-gold/10 blob-2 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <Reveal>
             <div className="max-w-4xl mx-auto text-center">
               <Quotes size={56} className="text-brand-gold mx-auto mb-8" weight="fill" />
@@ -143,7 +142,7 @@ const About = () => {
 
       {/* CTA */}
       <section className="bg-cream-pattern py-24 relative">
-        <div className="container mx-auto px-6 text-center">
+        <div className="container mx-auto px-4 sm:px-6 text-center">
           <Reveal>
             <h2 className="font-serif text-3xl md:text-4xl text-brand-dark mb-8">Ready to take your own bold step?</h2>
             <div className="flex flex-wrap gap-4 justify-center">

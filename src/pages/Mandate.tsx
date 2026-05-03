@@ -2,13 +2,12 @@ import SiteLayout from "@/components/site/SiteLayout";
 import PageHero from "@/components/site/PageHero";
 import { Reveal, Stagger, StaggerItem } from "@/components/site/Reveal";
 import { Link } from "react-router-dom";
-import { Scissors, GlobeHemisphereWest, Plant, ArrowRight, Quotes, Sparkle, ShieldCheck, ChartLineUp, GraduationCap, HandHeart } from "@phosphor-icons/react";
+import { Scissors, GlobeHemisphereWest, Plant, ArrowRight, Quotes, Sparkle, SealCheck, ChartLineUp, GraduationCap, HandHeart } from "@phosphor-icons/react";
 
 const Mandate = () => {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="V. The 2026 Strategic Mandate"
         title={<>"Declutter <span className="italic text-gradient-gold">to be Free."</span></>}
         subtitle="Seven years of incorporation. Six years of unbroken operations. The mandate for 2026 is unambiguous: PUSH MORE — by removing what no longer serves the vision."
         watermark="2026"
@@ -16,9 +15,9 @@ const Mandate = () => {
 
       {/* THE BIG NUMBER */}
       <section className="bg-brand-dark py-32 text-brand-cream relative overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-brand-gold/15 blob-2 blur-3xl pointer-events-none" />
-        <div className="absolute -bottom-40 -right-40 w-[600px] h-[600px] bg-brand-leafdeep/40 blob-3 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="absolute -top-20 -left-20 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-brand-gold/15 blob-2 blur-2xl sm:blur-3xl pointer-events-none" />
+        <div className="absolute -bottom-20 -right-20 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-brand-leafdeep/40 blob-3 blur-2xl sm:blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="grid lg:grid-cols-12 gap-12 items-center">
             <div className="lg:col-span-5">
               <Reveal>
@@ -56,8 +55,8 @@ const Mandate = () => {
 
       {/* THREE PILLARS */}
       <section className="bg-brand-cream py-32 relative overflow-hidden">
-        <div className="absolute -top-32 right-0 w-[500px] h-[500px] bg-brand-sage/20 blob-3 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="absolute -top-16 right-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[500px] lg:h-[500px] bg-brand-sage/20 blob-3 blur-2xl sm:blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <Reveal><p className="font-sans text-brand-gold tracking-[0.3em] uppercase text-xs font-bold mb-4">The Three Mandates</p></Reveal>
             <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl text-brand-dark">Three commitments. <span className="italic">One direction.</span></h2></Reveal>
@@ -90,7 +89,7 @@ const Mandate = () => {
       {/* QUARTERLY ROADMAP */}
       <section className="bg-brand-navy py-32 text-brand-cream relative overflow-hidden">
         <div className="absolute top-0 right-0 text-[14vw] font-serif font-bold text-outline-cream opacity-[0.04] whitespace-nowrap pointer-events-none -translate-y-1/3 leading-none">2026</div>
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <Reveal><p className="font-sans text-brand-gold tracking-[0.3em] uppercase text-xs font-bold mb-4">Quarterly Roadmap</p></Reveal>
             <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl">Four quarters. <span className="italic text-gradient-gold">One ascent.</span></h2></Reveal>
@@ -98,7 +97,7 @@ const Mandate = () => {
 
           <Stagger className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             {[
-              { q: "Q1", t: "Audit & Realign", d: "Internal decluttering. Service line review. Client cohort recalibration.", Icon: ShieldCheck },
+              { q: "Q1", t: "Audit & Realign", d: "Internal decluttering. Service line review. Client cohort recalibration.", Icon: SealCheck },
               { q: "Q2", t: "Publish & Teach", d: "Launch the TISPAS Research Annual. Expand Topfaith mentorship cohort.", Icon: GraduationCap },
               { q: "Q3", t: "Broadcast & Reach", d: "New media partnerships. Public mental-health series for adolescents.", Icon: HandHeart },
               { q: "Q4", t: "Multiply & Hand Off", d: "Document playbooks. Train successors. Prepare 2027 strategic outlook.", Icon: ChartLineUp },
@@ -120,8 +119,8 @@ const Mandate = () => {
 
       {/* CLOSING SCRIPTURE */}
       <section className="bg-cream-pattern py-32 relative overflow-hidden">
-        <div className="absolute -top-40 -left-40 w-[600px] h-[600px] bg-brand-goldlight/30 blob-2 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="absolute -top-20 -left-20 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-brand-goldlight/30 blob-2 blur-2xl sm:blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <Reveal>
             <div className="max-w-4xl mx-auto text-center">
               <Sparkle size={48} className="text-brand-gold mx-auto mb-8" weight="fill" />

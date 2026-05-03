@@ -8,7 +8,6 @@ const Philosophy = () => {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="IV. Operating Philosophy"
         title={<>"The Ebenezer <span className="italic text-gradient-gold">Code."</span></>}
         subtitle="A character-and-competence matrix governed by the visionary directive of Habakkuk 2:2-3 — write the vision plainly; though it tarry, it will surely speak."
         watermark="EBENEZER"
@@ -17,7 +16,7 @@ const Philosophy = () => {
       {/* THE VERSE */}
       <section className="bg-brand-cream py-28 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-soft opacity-40 pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="max-w-4xl mx-auto bg-white card-pea p-12 md:p-16 border border-brand-dark/5 shadow-xl relative overflow-hidden">
             <div className="absolute -top-16 -right-16 w-48 h-48 blob-1 bg-brand-gold/10" />
             <div className="absolute -bottom-16 -left-16 w-48 h-48 blob-2 bg-brand-sage/20" />
@@ -35,8 +34,8 @@ const Philosophy = () => {
 
       {/* THE MATRIX */}
       <section className="bg-brand-cream py-28 relative">
-        <div className="absolute -top-20 right-0 w-[500px] h-[500px] bg-brand-sage/20 blob-3 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="absolute -top-10 right-0 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[500px] lg:h-[500px] bg-brand-sage/20 blob-3 blur-2xl sm:blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <Reveal><p className="font-sans text-brand-gold tracking-[0.3em] uppercase text-xs font-bold mb-4">The Matrix</p></Reveal>
             <Reveal delay={0.1}>
@@ -118,7 +117,7 @@ const Philosophy = () => {
       {/* PRINCIPLES */}
       <section className="bg-brand-navy py-32 text-brand-cream relative overflow-hidden">
         <div className="absolute top-0 left-0 text-[14vw] font-serif font-bold text-outline-cream opacity-[0.04] whitespace-nowrap pointer-events-none -translate-y-1/3 leading-none">PRINCIPLES</div>
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <Reveal><p className="font-sans text-brand-gold tracking-[0.3em] uppercase text-xs font-bold mb-4">Operating Principles</p></Reveal>
             <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl">How we show up — <span className="italic text-gradient-gold">always.</span></h2></Reveal>
@@ -146,8 +145,8 @@ const Philosophy = () => {
 
       {/* CLOSING QUOTE */}
       <section className="bg-cream-pattern py-32 relative overflow-hidden">
-        <div className="absolute -top-32 -right-20 w-[500px] h-[500px] bg-brand-goldlight/30 blob-2 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="absolute -top-16 -right-10 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[500px] lg:h-[500px] bg-brand-goldlight/30 blob-2 blur-2xl sm:blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <Reveal>
             <div className="max-w-4xl mx-auto text-center">
               <Quotes size={56} className="text-brand-gold mx-auto mb-8" weight="fill" />

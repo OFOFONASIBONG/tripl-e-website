@@ -29,7 +29,6 @@ const Media = () => {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="A Voice on Air"
         title={<>Answering the call of <span className="italic text-gradient-gold">humanity.</span></>}
         subtitle="Across two flagship television programmes and a continuous mentorship pipeline, Triple E translates clinical insight into everyday courage for families across Akwa Ibom and beyond."
         watermark="ON AIR"
@@ -38,7 +37,7 @@ const Media = () => {
       {/* SHOWS */}
       <section className="bg-brand-cream py-32 relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-soft opacity-40 pointer-events-none" />
-        <div className="container mx-auto px-6 relative space-y-24">
+        <div className="container mx-auto px-4 sm:px-6 relative space-y-24">
           {shows.map((s, i) => (
             <Reveal key={s.show}>
               <div className={`grid lg:grid-cols-12 gap-12 items-center ${i % 2 === 1 ? "lg:[&>*:first-child]:order-2" : ""}`}>
@@ -73,8 +72,8 @@ const Media = () => {
 
       {/* OTHER MEDIA WORK */}
       <section className="bg-brand-dark py-32 text-brand-cream relative overflow-hidden">
-        <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-brand-gold/15 blob-2 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="absolute -top-20 -right-20 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-brand-gold/15 blob-2 blur-2xl sm:blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="text-center max-w-2xl mx-auto mb-20">
             <Reveal><p className="font-sans text-brand-gold tracking-[0.3em] uppercase text-xs font-bold mb-4">Beyond Television</p></Reveal>
             <Reveal delay={0.1}><h2 className="font-serif text-4xl md:text-5xl">A platform that <span className="italic text-gradient-gold">multiplies.</span></h2></Reveal>
@@ -101,8 +100,8 @@ const Media = () => {
 
       {/* BOOKING */}
       <section className="bg-cream-pattern py-28 relative overflow-hidden">
-        <div className="absolute -top-32 -left-20 w-[500px] h-[500px] bg-brand-sage/20 blob-2 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="absolute -top-16 -left-10 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[500px] lg:h-[500px] bg-brand-sage/20 blob-2 blur-2xl sm:blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="max-w-4xl mx-auto bg-white card-pea p-12 md:p-16 border border-brand-dark/5 shadow-xl text-center relative overflow-hidden">
             <div className="absolute -top-16 -right-16 w-48 h-48 blob-1 bg-brand-gold/10" />
             <Reveal>

@@ -19,7 +19,6 @@ const Contact = () => {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="VI. Contact & Office"
         title={<>Begin the <span className="italic text-gradient-gold">conversation.</span></>}
         subtitle="Whether you need research support, career reinvention, family mediation or a media booking — the office of Triple E Counselling Services is open to you."
         watermark="UYO"
@@ -27,8 +26,8 @@ const Contact = () => {
 
       {/* INFO + FORM */}
       <section className="bg-brand-cream py-28 relative overflow-hidden">
-        <div className="absolute -top-32 -right-20 w-[500px] h-[500px] bg-brand-goldlight/30 blob-2 blur-3xl pointer-events-none" />
-        <div className="container mx-auto px-6 relative">
+        <div className="absolute -top-16 -right-10 w-[250px] h-[250px] sm:w-[350px] sm:h-[350px] lg:w-[500px] lg:h-[500px] bg-brand-goldlight/30 blob-2 blur-2xl sm:blur-3xl pointer-events-none" />
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <div className="grid lg:grid-cols-12 gap-12">
             {/* INFO */}
             <div className="lg:col-span-5">
@@ -126,7 +125,7 @@ const Contact = () => {
       {/* MAP CTA */}
       <section className="bg-brand-navy py-24 text-brand-cream relative overflow-hidden">
         <div className="absolute inset-0 bg-grid-soft opacity-30 pointer-events-none" />
-        <div className="container mx-auto px-6 relative text-center">
+        <div className="container mx-auto px-4 sm:px-6 relative text-center">
           <Reveal>
             <h2 className="font-serif text-3xl md:text-5xl mb-6">Visit us in <span className="italic text-gradient-gold">Uyo.</span></h2>
             <p className="font-sans text-brand-cream/65 max-w-2xl mx-auto mb-10 font-light text-lg">

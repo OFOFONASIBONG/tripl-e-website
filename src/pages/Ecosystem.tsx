@@ -1,5 +1,5 @@
 // filepath: src/pages/Ecosystem.tsx
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useSearchParams, Link } from "react-router-dom";
 import { ArrowRight, ArrowLeft, Clock, Calendar, Quotes, X } from "@phosphor-icons/react";
 import SiteLayout from "@/components/site/SiteLayout";
@@ -10,6 +10,7 @@ import { blogPosts, getBlogPostBySlug, getNextBlogPost, getPreviousBlogPost, Blo
 const Ecosystem = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedPost, setSelectedPost] = useState<BlogPost | null>(null);
+  const modalScrollRef = useRef<HTMLDivElement | null>(null);
   
   const postSlug = searchParams.get("post");
   
@@ -19,6 +20,7 @@ const Ecosystem = () => {
       if (post) {
         setSelectedPost(post);
         document.body.style.overflow = "hidden";
+        modalScrollRef.current?.scrollTo({ top: 0, left: 0 });
       }
     } else {
       setSelectedPost(null);
@@ -44,7 +46,6 @@ const Ecosystem = () => {
   return (
     <SiteLayout>
       <PageHero
-        eyebrow="IV. The Knowledge Ecosystem"
         title={<>Insights & <span className="italic text-gradient-gold">Perspectives.</span></>}
         subtitle="Deep dives into psychology, research, career reinvention, and family healing. Each article is designed to challenge your thinking and expand your worldview."
         watermark="ECOSYSTEM"
@@ -54,11 +55,11 @@ const Ecosystem = () => {
       <section className="bg-brand-navy py-20 relative overflow-hidden">
         {/* Background atmosphere */}
         <div className="absolute inset-0 pointer-events-none">
-          <div className="absolute -top-40 -right-40 w-[600px] h-[600px] bg-brand-gold/5 blob-2 blur-[100px]" />
+          <div className="absolute -top-20 -right-20 w-[300px] h-[300px] sm:w-[400px] sm:h-[400px] lg:w-[600px] lg:h-[600px] bg-brand-gold/5 blob-2 blur-[50px] sm:blur-[80px] lg:blur-[100px]" />
           <div className="absolute bottom-0 -left-32 w-[500px] h-[500px] bg-brand-leafdeep/20 blob-3 blur-[80px]" />
         </div>
 
-        <div className="container mx-auto px-6 relative">
+        <div className="container mx-auto px-4 sm:px-6 relative">
           <Reveal>
             <div className="text-center mb-16">
               <h2 className="font-serif text-4xl md:text-5xl text-brand-cream mb-4">
@@ -181,7 +182,7 @@ const Ecosystem = () => {
 
       {/* FULL BLOG POST MODAL */}
       {selectedPost && (
-        <div className="fixed inset-0 z-50 overflow-y-auto">
+        <div ref={modalScrollRef} className="fixed inset-0 z-50 overflow-y-auto">
           {/* Backdrop */}
           <div 
             className="fixed inset-0 bg-brand-navy/98 backdrop-blur-md"

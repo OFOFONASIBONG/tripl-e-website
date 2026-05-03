@@ -26,7 +26,7 @@ export default function PageHero({ eyebrow, title, subtitle, watermark, variant 
         </div>
       )}
 
-      <div className="container mx-auto px-6 relative z-10">
+      <div className="container mx-auto px-4 sm:px-6 relative z-10">
         <Reveal>
           {eyebrow && (
             <div className={`inline-flex items-center gap-3 px-4 py-2 rounded-full backdrop-blur-sm mb-6 ${dark ? "border border-brand-cream/10 bg-brand-cream/5" : "border border-brand-dark/10 bg-white/60"}`}>
@@ -37,7 +37,7 @@ export default function PageHero({ eyebrow, title, subtitle, watermark, variant 
         </Reveal>
 
         <Reveal delay={0.1}>
-          <h1 className={`font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] max-w-5xl ${dark ? "text-brand-cream" : "text-brand-dark"}`}>
+          <h1 className={`font-serif text-5xl md:text-7xl lg:text-[5.5rem] leading-[1.05] max-w-5xl ${eyebrow ? '' : 'mt-6'} ${dark ? "text-brand-cream" : "text-brand-dark"}`}>
             {title}
           </h1>
         </Reveal>
