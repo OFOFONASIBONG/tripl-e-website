@@ -1,0 +1,41 @@
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { Toaster as Sonner } from "@/components/ui/sonner";
+import { Toaster } from "@/components/ui/toaster";
+import { TooltipProvider } from "@/components/ui/tooltip";
+import Index from "./pages/Index (3).tsx";
+import About from "./pages/About.tsx";
+import Philosophy from "./pages/Philosophy.tsx";
+import Services from "./pages/Services.tsx";
+import Mandate from "./pages/Mandate.tsx";
+import Media from "./pages/Media.tsx";
+import Contact from "./pages/Contact.tsx";
+import Ecosystem from "./pages/Ecosystem.tsx";
+import NotFound from "./pages/NotFound.tsx";
+
+const queryClient = new QueryClient();
+
+const App = () => (
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/philosophy" element={<Philosophy />} />
+          <Route path="/services" element={<Services />} />
+          <Route path="/mandate" element={<Mandate />} />
+          <Route path="/media" element={<Media />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/ecosystem" element={<Ecosystem />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
+);
+
+export default App;

@@ -1,0 +1,282 @@
+@import url('https://fonts.googleapis.com/css2?family=Manrope:wght@300;400;500;600;700;800&family=Playfair+Display:ital,wght@0,400;0,600;0,700;0,900;1,400;1,600&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Triple E. — Design System
+   Brand: Character + Competence. Dark navy + gold + cream.
+   Logo cues: deep navy #0F2A47, vibrant green #4FD23B (foliage / growth).
+   We blend the existing sample-3 palette (dark/navy/gold/cream) with logo greens.
+   All colors HSL.
+*/
+
+@layer base {
+  :root {
+    --background: 41 50% 97%;            /* cream #FDFBF7 */
+    --foreground: 213 40% 7%;            /* deep dark */
+
+    --card: 0 0% 100%;
+    --card-foreground: 213 40% 7%;
+
+    --popover: 0 0% 100%;
+    --popover-foreground: 213 40% 7%;
+
+    --primary: 211 67% 17%;              /* brand-navy #0F2A47 */
+    --primary-foreground: 41 50% 97%;
+
+    --secondary: 113 65% 53%;            /* brand-leaf #4FD23B */
+    --secondary-foreground: 211 67% 12%;
+
+    --muted: 211 25% 92%;
+    --muted-foreground: 211 20% 35%;
+
+    --accent: 113 65% 53%;               /* leaf green */
+    --accent-foreground: 211 67% 12%;
+
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 213 20% 88%;
+    --input: 213 20% 88%;
+    --ring: 113 65% 53%;
+
+    --radius: 1.5rem;
+
+    /* Brand tokens — derived from the logo */
+    --brand-dark: 211 70% 9%;            /* deeper navy */
+    --brand-navy: 211 67% 17%;           /* logo navy #0F2A47 */
+    --brand-navy-2: 211 55% 28%;
+    --brand-gold: 46 65% 52%;            /* retained gold accent */
+    --brand-goldlight: 46 70% 83%;
+    --brand-cream: 41 50% 97%;
+    --brand-sand: 36 38% 87%;
+    --brand-sage: 113 35% 70%;
+    --brand-leaf: 113 65% 53%;           /* logo green #4FD23B */
+    --brand-leaf-light: 113 70% 78%;
+    --brand-leaf-deep: 145 55% 22%;      /* deep evergreen */
+    --brand-mist: 188 35% 78%;
+    --brand-gray: 211 15% 55%;
+
+    /* Gradients — navy + leaf forward */
+    --grad-aurora: radial-gradient(120% 80% at 0% 0%, hsl(var(--brand-leaf) / 0.35), transparent 60%),
+                   radial-gradient(80% 80% at 100% 0%, hsl(var(--brand-leaf-deep) / 0.55), transparent 55%),
+                   radial-gradient(100% 100% at 50% 100%, hsl(var(--brand-navy) / 0.98), hsl(var(--brand-dark)) 70%);
+    --grad-gold: linear-gradient(135deg, hsl(var(--brand-gold)) 0%, hsl(var(--brand-goldlight)) 100%);
+    --grad-leaf: linear-gradient(135deg, hsl(var(--brand-leaf-deep)) 0%, hsl(var(--brand-leaf)) 100%);
+    --grad-leaf-bright: linear-gradient(135deg, hsl(var(--brand-leaf)) 0%, hsl(var(--brand-leaf-light)) 100%);
+    --grad-navy: linear-gradient(135deg, hsl(var(--brand-navy)) 0%, hsl(var(--brand-dark)) 100%);
+    --grad-cream: radial-gradient(60% 50% at 30% 20%, hsl(var(--brand-sand)) 0%, hsl(var(--brand-cream)) 70%);
+
+    /* Shadows */
+    --shadow-soft: 0 30px 60px -30px hsl(var(--brand-navy) / 0.35);
+    --shadow-gold: 0 30px 80px -20px hsl(var(--brand-gold) / 0.45);
+    --shadow-leaf: 0 30px 80px -20px hsl(var(--brand-leaf) / 0.55);
+    --shadow-navy: 0 30px 80px -20px hsl(var(--brand-navy) / 0.55);
+
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  .dark {
+    --background: 213 60% 7%;
+    --foreground: 41 50% 97%;
+    --card: 213 50% 10%;
+    --card-foreground: 41 50% 97%;
+    --popover: 213 50% 10%;
+    --popover-foreground: 41 50% 97%;
+    --primary: 41 50% 97%;
+    --primary-foreground: 213 60% 11%;
+    --secondary: 213 35% 17%;
+    --secondary-foreground: 41 50% 97%;
+    --muted: 213 35% 17%;
+    --muted-foreground: 213 12% 70%;
+    --accent: 46 65% 52%;
+    --accent-foreground: 213 60% 11%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 41 50% 97%;
+    --border: 213 35% 20%;
+    --input: 213 35% 20%;
+    --ring: 46 65% 52%;
+  }
+}
+
+@layer base {
+  * { @apply border-border; }
+  html { scroll-behavior: smooth; }
+  body {
+    @apply bg-background text-foreground antialiased;
+    font-family: 'Manrope', system-ui, sans-serif;
+    font-feature-settings: 'ss01', 'cv11';
+  }
+  ::selection { background: hsl(var(--brand-leaf)); color: hsl(var(--brand-navy)); }
+  ::-webkit-scrollbar { width: 10px; }
+  ::-webkit-scrollbar-track { background: hsl(var(--brand-dark)); }
+  ::-webkit-scrollbar-thumb { background: hsl(var(--brand-leaf-deep)); border-radius: 5px; }
+  ::-webkit-scrollbar-thumb:hover { background: hsl(var(--brand-leaf)); }
+
+  /* Custom cursor — leaf-green dot + outline */
+  @media (pointer: fine) {
+    body { cursor: none; }
+    a, button, .link-hover, [role="button"], input, textarea, select, label { cursor: none; }
+  }
+  .cursor-dot, .cursor-outline {
+    position: fixed; top: 0; left: 0;
+    border-radius: 50%; z-index: 9999; pointer-events: none;
+    will-change: transform;
+    transform: translate3d(-100px, -100px, 0) translate(-50%, -50%);
+  }
+  .cursor-dot {
+    width: 10px; height: 10px;
+    background-color: hsl(var(--brand-leaf));
+    box-shadow: 0 0 14px hsl(var(--brand-leaf) / 0.9), 0 0 2px hsl(var(--brand-cream));
+  }
+  .cursor-outline {
+    width: 42px; height: 42px;
+    border: 1.5px solid hsl(var(--brand-leaf) / 0.7);
+    transition: width 0.2s, height 0.2s, background-color 0.2s, border-color 0.2s;
+    backdrop-filter: blur(2px);
+  }
+  .cursor-outline.is-hover {
+    width: 64px; height: 64px;
+    background-color: hsl(var(--brand-leaf) / 0.12);
+    border-color: hsl(var(--brand-gold) / 0.85);
+  }
+  @media (pointer: coarse) {
+    .cursor-dot, .cursor-outline { display: none !important; }
+  }
+}
+
+@layer components {
+  .font-serif { font-family: 'Playfair Display', serif; }
+  .font-sans  { font-family: 'Manrope', sans-serif; }
+
+  /* PEA-SHAPED button — asymmetric organic blob */
+  .btn-pea {
+    @apply relative inline-flex items-center gap-3 px-9 py-4 font-sans font-semibold tracking-wide
+           transition-all duration-500 overflow-hidden;
+    border-radius: 60% 40% 55% 45% / 50% 60% 40% 50%;
+  }
+  .btn-pea-gold {
+    background: var(--grad-gold);
+    color: hsl(var(--brand-dark));
+    box-shadow: var(--shadow-gold);
+  }
+  .btn-pea-gold:hover { border-radius: 50% 50% 50% 50% / 50% 50% 50% 50%; transform: translateY(-2px); }
+  .btn-pea-ghost {
+    background: hsl(var(--brand-cream) / 0.06);
+    color: hsl(var(--brand-cream));
+    backdrop-filter: blur(10px);
+    border: 1px solid hsl(var(--brand-gold) / 0.3);
+  }
+  .btn-pea-ghost:hover { background: hsl(var(--brand-gold) / 0.12); border-color: hsl(var(--brand-gold)); }
+  .btn-pea-leaf {
+    background: var(--grad-leaf);
+    color: hsl(var(--brand-cream));
+    box-shadow: var(--shadow-leaf);
+  }
+  .btn-pea-leaf:hover { border-radius: 45% 55% 50% 50% / 60% 40% 60% 40%; transform: translateY(-2px); }
+
+  /* Organic blob shapes */
+  .blob-1 { border-radius: 40% 60% 70% 30% / 40% 50% 60% 50%; }
+  .blob-2 { border-radius: 70% 30% 30% 70% / 60% 40% 60% 40%; }
+  .blob-3 { border-radius: 63% 37% 54% 46% / 55% 48% 52% 45%; }
+  .blob-4 { border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%; }
+
+  /* Multi-layered frame: stacked organic borders */
+  .frame-multi { position: relative; }
+  .frame-multi::before, .frame-multi::after {
+    content: ''; position: absolute; inset: -14px; pointer-events: none;
+    border: 1px dashed hsl(var(--brand-gold) / 0.35);
+    border-radius: inherit;
+    animation: spin-slow 40s linear infinite;
+  }
+  .frame-multi::after {
+    inset: -28px; border-style: solid;
+    border-color: hsl(var(--brand-gold) / 0.18);
+    animation-direction: reverse;
+    animation-duration: 60s;
+  }
+
+  /* Backdrop color patterns */
+  .bg-aurora { background: var(--grad-aurora); }
+  .bg-cream-pattern {
+    background:
+      radial-gradient(circle at 20% 10%, hsl(var(--brand-sand) / 0.5), transparent 40%),
+      radial-gradient(circle at 80% 90%, hsl(var(--brand-sage) / 0.25), transparent 45%),
+      hsl(var(--brand-cream));
+  }
+  .bg-grid-soft {
+    background-image:
+      linear-gradient(hsl(var(--brand-gold) / 0.06) 1px, transparent 1px),
+      linear-gradient(90deg, hsl(var(--brand-gold) / 0.06) 1px, transparent 1px);
+    background-size: 56px 56px;
+  }
+  .bg-noise {
+    background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.18 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+  }
+
+  /* Text */
+  .text-outline-cream { -webkit-text-stroke: 1px hsl(var(--brand-cream) / 0.12); color: transparent; }
+  .text-outline-dark  { -webkit-text-stroke: 1px hsl(var(--brand-dark) / 0.08); color: transparent; }
+  .text-gradient-gold {
+    background: var(--grad-gold);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+  .text-gradient-leaf {
+    background: var(--grad-leaf);
+    -webkit-background-clip: text; background-clip: text; color: transparent;
+  }
+
+  /* Image treatments */
+  .duotone-gold { position: relative; }
+  .duotone-gold::after {
+    content: ''; position: absolute; inset: 0;
+    background: linear-gradient(45deg, hsl(var(--brand-dark)), hsl(var(--brand-gold)));
+    mix-blend-mode: multiply; opacity: 0.55; pointer-events: none;
+  }
+  .img-blend { mix-blend-mode: luminosity; opacity: 0.85; transition: all 0.6s ease; }
+  .group:hover .img-blend { mix-blend-mode: normal; opacity: 1; transform: scale(1.04); }
+
+  /* Marquee */
+  .marquee-track { display: inline-flex; gap: 3rem; animation: marquee 35s linear infinite; }
+
+  /* Pea card — non-linear borders */
+  .card-pea {
+    border-radius: 38px 14px 38px 14px;
+    background: hsl(var(--card));
+    box-shadow: var(--shadow-soft);
+  }
+  .card-pea-alt { border-radius: 14px 38px 14px 38px; }
+}
+
+@layer utilities {
+  @keyframes spin-slow { to { transform: rotate(360deg); } }
+  .animate-spin-slow { animation: spin-slow 18s linear infinite; }
+  @keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-50%); } }
+  @keyframes blob {
+    0%,100% { border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%; }
+    50%     { border-radius: 30% 60% 70% 40% / 50% 60% 30% 60%; }
+  }
+  .animate-blob { animation: blob 12s ease-in-out infinite; }
+  @keyframes float-y {
+    0%,100% { transform: translateY(0); }
+    50%     { transform: translateY(-14px); }
+  }
+  .animate-float { animation: float-y 6s ease-in-out infinite; }
+  @keyframes shimmer {
+    0% { background-position: -200% 0; }
+    100% { background-position: 200% 0; }
+  }
+  .animate-shimmer {
+    background: linear-gradient(90deg, transparent, hsl(var(--brand-gold) / 0.2), transparent);
+    background-size: 200% 100%;
+    animation: shimmer 3s linear infinite;
+  }
+}
